@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "devcorpProject"
+  "defaultProject": "devcorpProject",
+  "cli": {
+    "analytics": false
+  }
 }

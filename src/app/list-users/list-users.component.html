@@ -9,17 +9,17 @@
               <th scope="col">Nom d'utilisateur</th>
               <th scope="col">Profil</th>
               <th scope="col">Repositories</th>
-              <th scope="col">Abonnés</th>
+              <th scope="col">Liste des abonnés</th>
+              
             </tr>
           </thead>
           <tbody *ngFor="let user of users">
             <tr>
            
-              <th scope="row">{{user.login}}</th>
+              <th scope="row">{{user.login}}</th>   
               <td scope="row"><button type="button" class="btn btn-warning" (click)="consulterProfil(user.login)">Consulter</button></td>
               <td scope="row"><button type="button" class="btn btn-success" (click)="consulterRepositories(user.login)">Consulter</button></td>
               <td scope="row"><button type="button" class="btn btn-primary" (click)="consulterAbonnes(user.login)">Consulter</button></td>
-              <td scope="row"><button type="button" class="btn btn-danger">Consulter</button></td>          
             
             </tr>
                        

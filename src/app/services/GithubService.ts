@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
 
 @Injectable()
 export class GithubService {
@@ -47,15 +47,19 @@ return this.http.get(this.urlRepository+username+'/'+repositorie+'/pulls');
 
 
 
-// Fetch repository activity over time
-/*this.http.get(`${url}/stats/commit_activity`).subscribe((data: any[]) => {
-  const activity = data.map((week) => week.total);
-  console.log(`Repository activity over time: ${activity}`);
-});
-
-*/
+getUserFollowers(username:string) : Observable<any> {
+  // Fetch number of commits
+return this.http.get(this.apiUrl+'/'+username+'/'+'followers');
+}
 
 
+
+getProfilAndRepositoryOfUser(username:string): Observable<any> {
+  const request1 = this.http.get(this.apiUrl+'/'+username);
+  const request2 = this.http.get('https://api.github.com/users/'+username+'/repos');
+
+  return forkJoin([request1, request2]);
+}
 
 
 

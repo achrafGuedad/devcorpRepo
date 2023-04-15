@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'repositorie', loadChildren: () => import('./repository-list/repository-list.module').then(m => m.RepositoryListModule) },
   { path: 'repositorieDetails', loadChildren: () => import('./repository-details/repository-details.module').then(m => m.RepositoryDetailsModule) },
   { path: 'abonnes', loadChildren: () => import('./abonnes/abonnes.module').then(m => m.AbonnesModule) },
+  { path: 'chercherUtilisateur', loadChildren: () => import('./chercher-utilisateur/chercher-utilisateur.module').then(m => m.ChercherUtilisateurModule) },
 
 ];
 

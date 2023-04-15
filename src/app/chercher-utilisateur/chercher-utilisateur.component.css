@@ -1,0 +1,33 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* to allow cards to wrap to the next row */
+    justify-content: space-between; /* to add space between the cards */
+  }
+  
+  .card {
+    width: 400px; /* adjust this as needed */
+    height: 500px; /* adjust this as needed */
+    background-color: lightslategray;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+  }
+
+  
+  img{
+    width: 300px; /* adjust this as needed */
+    height: 400px;
+  }
+
+  .valeurBalise{
+
+    font-weight: normal;
+    
+  }
+
+  .titreBalise{
+    font-weight: bold;
+    padding-left: 5%;
+    padding-top: 2%;
+    margin-top: 2px;
+  }

@@ -14,6 +14,9 @@ import { RepositoryDetailsComponent } from './repository-details/repository-deta
 import { RepositoryDetailsModule } from './repository-details/repository-details.module';
 import { AbonnesComponent } from './abonnes/abonnes.component';
 import { AbonnesModule } from './abonnes/abonnes.module';
+import { ChercherUtilisateurComponent } from './chercher-utilisateur/chercher-utilisateur.component';
+import { ChercherUtilisateurModule } from './chercher-utilisateur/chercher-utilisateur.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,12 +25,13 @@ import { AbonnesModule } from './abonnes/abonnes.module';
     ProfilUserComponent,
     RepositoryListComponent,
     RepositoryDetailsComponent,
-    AbonnesComponent
+    AbonnesComponent,
+      ChercherUtilisateurComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,HttpClientModule,ListUsersModule,ProfilUserModule,RepositoryDetailsModule,
-    AbonnesModule
+    AbonnesModule,ChercherUtilisateurModule,ReactiveFormsModule,FormsModule
   ],
   providers: [GithubService],
   bootstrap: [AppComponent],

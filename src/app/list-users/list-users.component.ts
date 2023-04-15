@@ -41,7 +41,10 @@ export class ListUsersComponent  implements OnInit {
 
   }
 
+ naviguerToUtilisateurComponent(userName){
+  this.router.navigateByUrl('/chercherUtilisateur/'+userName);
 
+ }
 
 }
 

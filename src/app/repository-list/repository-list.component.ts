@@ -11,7 +11,6 @@ export class RepositoryListComponent implements OnInit {
   
   userRepositories:any[]=[];
   loginUser!:string;
-  repositoryNames:string[]=[];
 
   name!:string;
   
@@ -41,12 +40,9 @@ export class RepositoryListComponent implements OnInit {
       this.githubService.getUserRepositories(this.loginUser).subscribe(
         (data:any[])=> {
 
-          console.log(data);
+    console.log(data);
     this.userRepositories = data;
-    this.repositoryNames = data.map(repository => repository.name);
-    console.log(this.repositoryNames); // Liste des noms de dépôts
     
-
         },
         (error)=> {
           console.log(error);

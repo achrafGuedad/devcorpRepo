@@ -1,0 +1,115 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Chercher un utilisateur :</h2>
+        
+        
+        
+        <form #myForm="ngForm">
+          <div class="form-group">
+            <label for="nom">Nom à chercher :</label>
+            <input type="text" class="form-control" id="nom" placeholder="Chercher un nom" [(ngModel)]="utilisateur" name="utilisateur">
+  
+        </div>
+    
+          <br />
+          
+          <button type="submit" class="btn btn-danger" (click)="getUser()"
+          >Chercher</button>
+        
+    
+    </form>
+    
+    
+    </div>
+
+   
+
+    
+    <div class="card-container" *ngIf="user && activeCard && utilisateur">
+       
+
+            <img [src]="user.avatar_url">
+    
+        
+        <div class="card">
+
+        <span  class="titreBalise">Nom :<span class="valeurBalise"> {{ user.name}} </span>   </span > <br />
+        <span  class="titreBalise">ID :<span class="valeurBalise"> {{ user.id}} </span>   </span > <br />
+        <span  class="titreBalise">Location :<span class="valeurBalise"> {{ user.location}} </span>   </span > <br />
+        <span  class="titreBalise">entreprise :<span class="valeurBalise"> {{ user.company}} </span>   </span > <br />
+        <span  class="titreBalise">Biographie :<span class="valeurBalise"> {{ user.biog}} </span>   </span > <br />
+        <span  class="titreBalise">Date de création :<span class="valeurBalise"> {{user.created_at}} </span>   </span > <br />
+        <span  class="titreBalise">Date de modification :<span class="valeurBalise"> {{user.updated_at}} </span>   </span > <br />
+        <span  class="titreBalise"> admirateurs :<span class="valeurBalise"> {{user.nbFollowers}} </span>   </span > <br />
+
+      </div>
+     
+      </div>
+
+      <br/>
+          <div *ngIf="user && activeCard && utilisateur">
+      <div  *ngFor="let repo of  repos"> 
+
+        <div class="form-group">
+            <label for="usr">Nom de répositorie :</label>
+            <input type="text" class="form-control" id="usr" disabled  value="{{repo.name}}"
+        
+            >
+          </div>
+          <div class="form-group">
+            <label for="pwd">Nombre d'étoiles":</label>
+            <input type="text" value="{{repo.stargazers_count}}"class="form-control" id="pwd" disabled>
+          </div>
+
+
+
+
+          <div class="form-group">
+            <label for="comment">Description :</label>
+            <textarea class="form-control" rows="5" id="comment" disabled>
+
+                {{repo.description}}
+            </textarea>
+          </div>
+
+          <br />
+
+
+
+
+
+
+
+
+
+
+<p>-------------------------------------------------------------------------------------------------------------</p>
+
+    </div>
+</div>
+
+
+   
+
+       
+
+        
+
+            
+
+
+
+
+
+
+      
+
+
+
+
+
+    </div>
+  </div>
+
+
